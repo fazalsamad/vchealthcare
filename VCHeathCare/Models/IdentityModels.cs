@@ -27,7 +27,9 @@ namespace VCHeathCare.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Model.Calender> Calendars { get; set; }
-        public DbSet<Model.Treatment> Treatments { get; set; }
+        public DbSet<Model.Treatment> Treatments { get; set; } 
+        public DbSet<Appointment> Appointments { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

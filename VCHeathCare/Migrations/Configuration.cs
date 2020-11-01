@@ -9,7 +9,7 @@ namespace VCHeathCare.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(VCHeathCare.Models.ApplicationDbContext context)

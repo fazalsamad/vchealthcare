@@ -175,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\EmailCredential.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -200,18 +201,28 @@
     <Compile Include="Migrations\202009191316002_treatments.Designer.cs">
       <DependentUpon>202009191316002_treatments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010311005502_addingAppointments.cs" />
+    <Compile Include="Migrations\202010311005502_addingAppointments.Designer.cs">
+      <DependentUpon>202010311005502_addingAppointments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Calender.cs" />
-    <Compile Include="Models\Date.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\EmailModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Treatment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\VCEmailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="VCExtenstions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-VCHeathCare-20200831030912.mdf" />
+    <Content Include="App_Data\aspnet-VCHeathCare-20200831030912_log.ldf">
+      <DependentUpon>aspnet-VCHeathCare-20200831030912.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -399,9 +410,10 @@
     <Content Include="Views\Treatments\Edit.cshtml" />
     <Content Include="Views\Treatments\Index.cshtml" />
     <Content Include="Views\Date\dateTime.cshtml" />
+    <Content Include="Views\Appointment\Create.cshtml" />
+    <Content Include="Views\Appointment\SuccessFeedBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Booking\" />
     <Folder Include="Views\Dashboard\" />
   </ItemGroup>
@@ -416,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009191316002_treatments.resx">
       <DependentUpon>202009191316002_treatments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010311005502_addingAppointments.resx">
+      <DependentUpon>202010311005502_addingAppointments.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
