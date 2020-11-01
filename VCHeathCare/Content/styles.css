@@ -1,0 +1,308 @@
+body {
+    background: #f5f5f5;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.shadow-custom {
+    box-shadow: 0 0 8px #000;
+}
+
+.bg-custom {
+    background: #6b6b6b;
+}
+
+.bg-light-custom,
+.bg-light-max {
+    background: #f5f5f5;
+    /*
+    border-top: 1px solid #333;
+    */
+    margin-left: 16.6666666667%;
+    min-height: 83vh;
+}
+.bg-light-max {
+    margin-left: 65px;
+    width: 99%;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.page-title {
+    padding: 1.6rem 1rem;
+}
+.page-title h3 .base-text {
+    font-size: 60%;
+}
+
+/*
+    sidebar styles
+*/
+.sidebar {
+    height: 90.7vh;
+    /*border-right: 1px solid #333;*/
+    padding: 0;
+}
+
+.sidebar-out {
+    width: 65px;
+}
+
+.toggle-btn {
+    float: right;
+    padding: 5px 8px;
+    margin: 15px;
+    border: 1px solid #fff;
+    font-size: 22px;
+    color: #fff;
+}
+
+.toggle-btn:hover {
+    cursor: pointer;
+    color: #333;
+    background: #fff;
+}
+
+.btn-color-w {
+    color: #fff;
+}
+
+.aside-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.aside-nav li {
+    text-align: left;
+    padding: 0;
+}
+
+.aside-nav li a {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    border-left: 5px solid #3490dc;
+}
+
+.icons {
+    font-size: 16px;
+}
+
+.aside-nav li a:hover,
+.aside-nav li.active a {
+    background: #f5f5f5;
+    border-left: 5px solid #f6993f;
+    color: #000;
+}
+
+.aside-nav li a:hover,
+.aside-nav li.active a span {
+    color: #f6993f;
+}
+.active-link {
+    color: #f6993f;
+}
+
+.aside-nav li a:hover {
+    border-top: 1px solid #6b6b6b;
+}
+
+.spread-link {
+    display: inline-block;
+}
+
+/*
+    Page contents
+*/
+.no-p {
+    padding: 0;
+}
+.page-contents {
+    background: #fff;
+    min-height: 300px;
+    box-shadow: 0 0 1px #333;
+    padding: 0;
+}
+.bg-dashboard {
+    background: #f5f5f5;
+    box-shadow: none;
+}
+
+.portlet {
+    margin: 0;
+}
+.portlet .portlet-title {
+    background: #3490dc;
+    color: #fff;
+    padding: 0px 15px;
+}
+.portlet-title h4 {
+    line-height: 1.8;
+}
+.btn-py {
+    margin: 10px 0;
+}
+.btn-s-o {
+    background: #6c757d;
+    color: #fff;
+}
+.btn-s-o:hover {
+    background: #6cb2eb;
+    color: #fff;
+}
+.portlet .portlet-body {
+    padding: 5px 15px;
+}
+
+.flex-right {
+    flex-direction: row-reverse;
+}
+.flex-right .btn-success {
+    margin-left: 10px;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid #3490dc;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+/*
+    Dashboard
+*/
+.dashboard-header-wrapper {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+.date-range-wrapper {
+    width: 20rem;
+    margin-bottom: 10px;
+}
+
+.dash-card {
+    box-shadow: 0 0 4px #333;
+    /*height: 8rem;
+    padding: 5px;*/
+}
+
+.dash-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 4px #3490dc;
+}
+
+.dash-card a:hover,
+.dash-card a:focus,
+.dash-card a:active,
+.dash-card a:visited {
+    text-decoration: none;
+    color: default;
+}
+
+.dash-card-title {
+    height: 2rem;
+    display: flex;
+}
+
+.visual {
+    background: #6c757d;
+    width: 5rem;
+    height: 5rem;
+}
+.details {
+    padding: 10px;
+    text-align: center;
+}
+
+.number {
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.desc {
+    display: block;
+    margin-top: 4rem;
+    font-size: 17px;
+    /* font-weight: bold; */
+    background: #3490dc;
+    color: #fff;
+    font-size: 19px !important;
+    padding: 0 10px;
+}
+
+/*
+
+Data tables styles
+
+*/
+#mainTable_length select {
+    padding: 3px 10px;
+}
+
+#mainTable_length select:hover,
+#mainTable_length select:focus {
+    border: 1px solid #3490dc;
+    border-radius: 5px;
+    outline: 0;
+}
+.dataTables_filter input {
+    border: 1px solid #6b6b6b;
+    border-radius: 5px;
+    margin-left: 5px;
+    outline: 0;
+    padding: 3px 10px;
+}
+
+.dataTables_filter input:hover,
+.dataTables_filter input:focus,
+.dataTables_filter input:active {
+    outline: 0;
+    border: 1px solid #3490dc;
+}
+
+#mainTable_paginate .paginate_button {
+    background: #6b6b6b;
+    margin: 0 2px;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#mainTable_paginate .paginate_button:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#mainTable_paginate .previous,
+#mainTable_paginate .next {
+    background: #6c757d;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+/*
+    Footer 
+*/
+.footer {
+    background: #3490dc;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+}
+
+.footer p {
+    margin-top: 4px;
+}
+
+.hide {
+    display: none;
+}
