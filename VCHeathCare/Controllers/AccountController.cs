@@ -453,7 +453,7 @@ namespace VCHeathCare.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("dateTime", "Date");
+            return RedirectToAction("Create", "Appointment");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult
