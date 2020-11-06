@@ -16,7 +16,7 @@ namespace VCHeathCare.Services
         {
             _emailCredential = new EmailCredential();
         }
-        public void SendEmail(EmailModel emailModel)
+        public void SendGmailSmtpEmail(EmailModel emailModel)
         {
             MailMessage mail = new MailMessage();
 

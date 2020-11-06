@@ -221,6 +221,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Treatment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailRelayService.cs" />
     <Compile Include="Services\SendGridMailService.cs" />
     <Compile Include="Services\VCEmailService.cs" />
     <Compile Include="Startup.cs" />
