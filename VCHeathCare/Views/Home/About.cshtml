@@ -1,184 +1,184 @@
 ﻿@{
     ViewBag.Title = "Treatments";
 }
-<html>
-<head>
+@*<html>
+    <head>
 
-    <title>
+        <title>
 
-    </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - VcHealthcare</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/Scripts/dist/core.js")
-    <link rel="stylesheet" href="@Url.Content("~/Content/Stylesheet1.css")" type="text/css">
-    <style>
-        .container {
-            padding: 0px !important;
-        }
+        <title>@ViewBag.Title - VcHealthcare</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/Scripts/dist/core.js")
+        <link rel="stylesheet" href="@Url.Content("~/Content/Stylesheet1.css")" type="text/css">
+        <style>
+            .container {
+                padding: 0px !important;
+            }
 
-        .row {
-            margin: 0px !important;
-        }
-    </style>
-</head>
-<body>
+            .row {
+                margin: 0px !important;
+            }
+        </style>
+    </head>
+    <body>*@
 
 
-    <div class="container" style="width:1263px;">
+<div class="container" style="width:1263px;">
 
-        <img  src="~/Content/Images/header2.png" style="width:1263px;    
+    <img src="~/Content/Images/header2.png" style="width:1263px;
 height:400px;" alt="Chania">
-        <h1 id="heading" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color:#ffffff; font-display:block; font-size:45px;"> Our Treatments</h1>
-    </div>
+    <h1 id="heading" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color:#ffffff; font-display:block; font-size:45px;"> Our Treatments</h1>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12" style="text-align:center">
-                <h2>Please choose front the list of available treatments!</h2>
-                <a class="btn btn-success" href="@Url.Action("Create","Treatments")">Add New </a>
-            </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12" style="text-align:center">
+            <h2>Please choose front the list of available treatments!</h2>
+            <a class="btn btn-success" href="@Url.Action("Create","Treatments")">Add New </a>
         </div>
 
-
-
     </div>
 
 
-    <div class="container">
-        <div class="row" style="margin-top:40px;">
-           
-            <div class="col-lg-4">
 
-                <div id="rcorners1" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2> Mental Health</h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=1})">Lets See</a>
-                    </div>
+</div>
 
+
+<div class="container">
+    <div class="row" style="margin-top:40px;">
+
+        <div class="col-lg-4">
+
+            <div id="rcorners1" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2> Mental Health</h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=1})">Lets See</a>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div id="rcorners2" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2>
 
-                            Cosmetic Treatment
-                        </h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=2})">Lets See</a>
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div id="rcorners3" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2> Gynaecological </h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=3})">Lets See</a>
-                    </div>
-
-
-                </div>
             </div>
         </div>
+        <div class="col-lg-4">
+            <div id="rcorners2" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2>
 
-
-
-    </div>
-
-    <div class="container">
-        <div class="row" style="margin-top:40px;">
-            <div class="col-lg-4">
-
-                <div id="rcorners4" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2>
-                            Men’s Health
-                            
-                        </h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=4})">Lets See</a>
-                    </div>
-
-
+                        Cosmetic Treatment
+                    </h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=2})">Lets See</a>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div id="rcorners5" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2> Physiotherapy </h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=5})">Lets See</a>
-                    </div>
 
 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div id="rcorners6" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2> Surgical  Treatments</h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=6})">Lets See</a>
-                    </div>
-
-
-                </div>
             </div>
         </div>
-
-
-
-    </div>
-    <div class="container">
-        <div class="row" style="margin-top:40px;">
-            <div class="col-lg-4">
-
-                <div id="rcorners7" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h2> Orthopaedics Treatments</h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=7})">Lets See</a>
-                    </div>
-
-
+        <div class="col-lg-4">
+            <div id="rcorners3" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2> Gynaecological </h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=3})">Lets See</a>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div id="rcorners8" class="card-cus" style="margin-bottom:20px;">
-                    <div class="overlay">
-                        <h1>
-                            Travel
-                        </h1>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=8})">Lets See</a>
-                    </div>
 
 
-                </div>
-            </div>
-            <div class="col-lg-4">
-               
-
-
-                </div>
             </div>
         </div>
-
-
-
     </div>
-    @section Scripts {
-        <script type="text/javascript">
-            const instance = new Typewriter('#heading', {
-                strings: ['<span class="wrapper"><span class="span-1">OUR</span>, <span class="span-2">TREATMENTS</span> <span class="span-3">....</span> <span class="span-4"></span></span>'],
-                autoStart: true,
-                loop: true,
-            });
-        </script>
-    }
-</body>
 
-</html>
+
+
+</div>
+
+<div class="container">
+    <div class="row" style="margin-top:40px;">
+        <div class="col-lg-4">
+
+            <div id="rcorners4" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2>
+                        Men’s Health
+
+                    </h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=4})">Lets See</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div id="rcorners5" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2> Physiotherapy </h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=5})">Lets See</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div id="rcorners6" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2> Surgical  Treatments</h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=6})">Lets See</a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<div class="container">
+    <div class="row" style="margin-top:40px;">
+        <div class="col-lg-4">
+
+            <div id="rcorners7" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h2> Orthopaedics Treatments</h2>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=7})">Lets See</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div id="rcorners8" class="card-cus" style="margin-bottom:20px;">
+                <div class="overlay">
+                    <h1>
+                        Travel
+                    </h1>
+                    <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=8})">Lets See</a>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-lg-4">
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    <script type="text/javascript">
+        const instance = new Typewriter('#heading', {
+            strings: ['<span class="wrapper"><span class="span-1">OUR</span>, <span class="span-2">TREATMENTS</span> <span class="span-3">....</span> <span class="span-4"></span></span>'],
+            autoStart: true,
+            loop: true,
+        });
+    </script>
+}
+@*</body>
+
+    </html>*@
 
 
