@@ -33,7 +33,8 @@ namespace VCHeathCare.Services
             string apiKey = _emailCredential.Key;
 
             var client = new SendGridClient(apiKey);
-            var response = client.SendEmailAsync(message).Result;
+            
+            var response = Task.Run(async ()=> await client.SendEmailAsync(message)).Result;
 
             return response;
         }

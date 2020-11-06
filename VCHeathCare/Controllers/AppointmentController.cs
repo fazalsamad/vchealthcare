@@ -48,6 +48,7 @@ namespace VCHeathCare.Controllers
                 };
             }
 
+            var date = appointment.Date.HasValue? appointment.Date.Value :DateTime.Now;
             var markUp = $@" 
 <table>
         <tbody>
@@ -58,7 +59,7 @@ namespace VCHeathCare.Controllers
                 <th>Email</th> <td>{appointment.Email}</td>
             </tr>
             <tr>
-                <th>Date &amp; Time</th> <td>{appointment.Date.Value.ToLongDateString()} {appointment.Date.Value.ToLongTimeString()}</td>
+                <th>Date &amp; Time</th> <td>{date.ToLongDateString()} {date.ToLongTimeString()}</td>
             </tr>
             <tr>
                 <th>Contact Number</th> <td>{appointment.Contact}</td>
