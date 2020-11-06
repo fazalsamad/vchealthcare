@@ -47,17 +47,40 @@ namespace VCHeathCare.Controllers
                 };
             }
 
+            var markUp = $@"<table>
+        <tbody>
+            <tr>
+                <th>Name</th>  <td>{appointment.Name}</td>
+            </tr>
+            <tr>
+                <th>Email</th> <td>{appointment.Email}</td>
+            </tr>
+            <tr>
+                <th>Date &amp; Time</th> <td>{appointment.Date.Value.ToLongDateString()} {appointment.Date.Value.ToLongTimeString()}</td>
+            </tr>
+            <tr>
+                <th>Contact Number</th> <td>{appointment.Contact}</td>
+            </tr>
+            <tr>
+                <th>Appointment Type</th>  <td>{appointment.AppointmentType}</td>
+            </tr> 
+        </tbody>
+    </table>";
+
+            var userPreMarkUp = @"<h2> We have received the following details for appointments.</h2>";
+            var userPostMarkUp = "<h3>We will contact you soon!</h3>";
+
             
-            var toUseremail = new EmailModel(appointment.Email, "Appointment Booking", "<h2>Your appointment is booked.</h2>");
+    
+                var userMarkup = $"{userPreMarkUp}{markUp}{userPostMarkUp}";
+            var toUseremail = new EmailModel(appointment.Email, "Appointment Booking", userMarkup);
 
             var credentials = new EmailCredential();
 
-            var message = $"<p>An appointment is booked by {appointment.Name} <br/>" +
-              $"Email: {appointment.Email} <br/>" +
-              $"Date &amp; Time: {appointment.Date.Value.ToLongDateString()}-{appointment.Date.Value.ToLongTimeString()}<br/>" +
-              $"Contact: {appointment.Contact}<br/>" +
-              $"Appointment Type: {appointment.AppointmentType}</p>";
-            var toAdminEmail = new EmailModel(credentials.AdminEmail, "Appointment Booking", message);
+            var adminPreMarkUp = $"<h2>An appointment is booked by </h2> ";
+            var adminMarkUp = $"{adminPreMarkUp}{markUp}";
+
+            var toAdminEmail = new EmailModel(credentials.AdminEmail, "Appointment Booking", adminMarkUp);
 
             var emailService = new VCEmailService();
 
