@@ -57,6 +57,10 @@ namespace VCHeathCare.Controllers
 
             }
 
+            if (!result)
+            {
+                result = SendOnSendGridSmtp(appointment);
+            }
             var status = result ? "sent" : "failed"; 
 
             return RedirectToAction("FeedBack", new { status });
@@ -72,7 +76,7 @@ namespace VCHeathCare.Controllers
 
 
         private bool SendOnSendGrid(Appointment appointment)
-        {
+        { 
             var date = appointment.Date.HasValue ? appointment.Date.Value : DateTime.Now;
             var markUp = $@" 
 <table>
@@ -121,7 +125,7 @@ namespace VCHeathCare.Controllers
 
                 result = (adminCode >= 200 && adminCode <= 299) && (userCode >= 200 && userCode <= 299);
             }
-            catch
+            catch (Exception ex)
             {
                 result = false;
             }
@@ -130,7 +134,7 @@ namespace VCHeathCare.Controllers
         }
 
         private bool SendOnSmtp(Appointment appointment)
-        {
+        { 
             var date = appointment.Date.HasValue ? appointment.Date.Value : DateTime.Now;
             var markUp = $@" 
 <table>
@@ -169,13 +173,60 @@ namespace VCHeathCare.Controllers
                 emailService.SendEmail(toUseremail);
                 emailService.SendEmail(toAdminEmail);
             }
-            catch
+            catch (Exception ex)
             {
                 result = false;
             }
 
             return result;
         }
-            
+
+        private bool SendOnSendGridSmtp(Appointment appointment)
+        {
+            var date = appointment.Date.HasValue ? appointment.Date.Value : DateTime.Now;
+            var markUp = $@" 
+<table>
+        <tbody>
+            <tr>
+                <th>Name</th>  <td>{appointment.Name}</td>
+            </tr>
+            <tr>
+                <th>Email</th> <td>{appointment.Email}</td>
+            </tr>
+            <tr>
+                <th>Date &amp; Time</th> <td>{date.ToLongDateString()} {date.ToLongTimeString()}</td>
+            </tr>
+            <tr>
+                <th>Contact Number</th> <td>{appointment.Contact}</td>
+            </tr>
+            <tr>
+                <th>Appointment Type</th>  <td>{appointment.AppointmentType}</td>
+            </tr> 
+        </tbody>
+    </table>";
+
+            var userPreMarkUp = @"<h2> We have received the following details for appointments.</h2>";
+            var userPostMarkUp = "<h3>We will contact you soon!</h3>";
+            var userMarkup = $"{userPreMarkUp}{markUp}{userPostMarkUp}";
+            var toUseremail = new EmailModel(appointment.Email, "Appointment Booking", userMarkup);
+            var credentials = new EmailCredential();
+            var adminPreMarkUp = $"<h2>An appointment is booked by </h2> ";
+            var adminMarkUp = $"{adminPreMarkUp}{markUp}";
+
+            var toAdminEmail = new EmailModel(credentials.AdminEmail, "Appointment Booking", adminMarkUp);
+            var emailService = new VCEmailService();
+            var result = true;
+            try
+            {
+                emailService.SendSendGridSmtpEmail(toUseremail);
+                emailService.SendSendGridSmtpEmail(toAdminEmail);
+            }
+            catch (Exception ex)
+            {
+                result = false;
+            }
+
+            return result;
+        }
     }
 }

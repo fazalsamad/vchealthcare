@@ -3,6 +3,7 @@ using SendGrid.Helpers.Mail;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using VCHeathCare.App_Start;
@@ -37,6 +38,6 @@ namespace VCHeathCare.Services
             var response = Task.Run(async ()=> await client.SendEmailAsync(message)).Result;
 
             return response;
-        }
+        } 
     }
 }
