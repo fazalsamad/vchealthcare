@@ -422,7 +422,7 @@
     <Content Include="Views\Treatments\Index.cshtml" />
     <Content Include="Views\Date\dateTime.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
-    <Content Include="Views\Appointment\SuccessFeedBack.cshtml" />
+    <Content Include="Views\Appointment\FeedBack.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Booking\" />
