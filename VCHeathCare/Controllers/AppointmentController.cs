@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 using System.Web.Mvc;
 using VCHeathCare.App_Start;
@@ -47,7 +48,8 @@ namespace VCHeathCare.Controllers
                 };
             }
 
-            var markUp = $@"<table>
+            var markUp = $@" 
+<table>
         <tbody>
             <tr>
                 <th>Name</th>  <td>{appointment.Name}</td>
@@ -69,23 +71,19 @@ namespace VCHeathCare.Controllers
 
             var userPreMarkUp = @"<h2> We have received the following details for appointments.</h2>";
             var userPostMarkUp = "<h3>We will contact you soon!</h3>";
-
-            
-    
-                var userMarkup = $"{userPreMarkUp}{markUp}{userPostMarkUp}";
-            var toUseremail = new EmailModel(appointment.Email, "Appointment Booking", userMarkup);
-
-            var credentials = new EmailCredential();
-
+            var userMarkup = $"{userPreMarkUp}{markUp}{userPostMarkUp}";
             var adminPreMarkUp = $"<h2>An appointment is booked by </h2> ";
             var adminMarkUp = $"{adminPreMarkUp}{markUp}";
+            var name = User.Identity.Name();
 
-            var toAdminEmail = new EmailModel(credentials.AdminEmail, "Appointment Booking", adminMarkUp);
+            var _emailCredentials = new EmailCredential(); 
+            var emailService = new SendGridMailService();
+            
+            var adminEmail = emailService.Email(adminMarkUp,_emailCredentials.AdminEmail,_emailCredentials.Name);
+            var userEmail = emailService.Email(userMarkup,appointment.Email,name);
 
-            var emailService = new VCEmailService();
-
-            emailService.SendEmail(toUseremail);
-            emailService.SendEmail(toAdminEmail);
+            var adminResponse = emailService.SendEmail(adminEmail);
+            var userResponse = emailService.SendEmail(userEmail);
 
             return RedirectToAction("SuccessFeedBack");
         }
