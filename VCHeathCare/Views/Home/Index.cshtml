@@ -2,95 +2,95 @@
     ViewBag.Title = "Home Page";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@* <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>@ViewBag.Title - VcHealthcare</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-    @Scripts.Render("~/Scripts/dist/core.js")
-    <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" /> 
-    <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
-    <style>
-        .container {
-            padding: 0px !important;
-        }
+                <title>@ViewBag.Title - VcHealthcare</title>
+                @Styles.Render("~/Content/css")
+                @Scripts.Render("~/bundles/modernizr")
+                @Scripts.Render("~/Scripts/dist/core.js")
+                <link href="~/Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+                <link href="~/Content/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+                <link href="~/Content/StyleSheet1.css" rel="stylesheet" />
+                <style>
+                    .container {
+                        padding: 0px !important;
+                    }
 
-        .row {
-            margin: 0px !important;
-        }
-    </style>
-</head>
-<body>
+                    .row {
+                        margin: 0px !important;
+                    }
+                </style>
+            </head>
+            <body>*@
 
-    <div class="container" style="width:1263px;">
+<div class="container" style="width:1263px;">
 
-        <img src="~/Content/Images/online-marketing-hIgeoQjS_iE-unsplash (1).jpg" style="width:1263.33px;  height:500px;" alt="Chania">
-        <b id="heading" style=" font-size:30px; position: absolute; top: 50%; left: 30%; transform: translate(-50%, -50%); color:black; font-display:block; font-size:45px;"> Vitalcare Health – Just For you.</b>
+    <img src="~/Content/Images/online-marketing-hIgeoQjS_iE-unsplash (1).jpg" style="width:1263.33px;  height:500px;" alt="Chania">
+    <b id="heading" style=" font-size:30px; position: absolute; top: 50%; left: 30%; transform: translate(-50%, -50%); color:black; font-display:block; font-size:45px;"> Vitalcare Health – Just For you.</b>
+
+</div>
+
+
+<div class="container">
+    <div class="center-block">
+        <div class="col-sm text-center">
+            <p class="text-center" style="font-size:45px;  font-display:block; margin-top:20px">
+                OUR AIMS
+            </p>
+            <p class="text-center" style="font-size:20px;  font-display:block; margin-top:20px">
+                We aim to provide support to the NHS and our patients by providing  Private Clinics and medical services <br />
+                at your doorstep.to achieve this systematically, we are targeting the most rural and  difficult to reach parts <br />
+                of Wales.We will gradually phase these clinics and services out to the rest of the country.
+            </p>
+        </div>
+
+    </div>
+    <div class="row" style=" margin-top:50px;">
+        <div class="col-sm-3" style="text-align:center;">
+
+            <img src="~/Content/Images/icon1.png" class="rounded" alt="image" />
+            <B style="font-size:16px;">GP Appointments</B>
+        </div>
+        <div class="col-sm-3" style="text-align:center;">
+            <img src="~/Content/Images/icon2.png" class="rounded" alt="image" />
+            <B style="font-size:16px;">Contact a Consultant</B>
+        </div>
+        <div class="col-sm-3" style="text-align:center;">
+            <img src="~/Content/Images/icon3.png" class="rounded" alt="image" />
+            <B style="font-size:16px;">Enquiries@vchealthcare.co.uk</B>
+        </div>
+        <div class="col-sm-3" style="text-align:center;">
+            <img src="~/Content/Images/icon5.png" class="rounded" alt="image" />
+            <B style="font-size:16px;">Reception: 0800 233 5957</B>
+        </div>
 
     </div>
 
 
-    <div class="container">
-        <div class="center-block">
-            <div class="col-sm text-center">
-                <p class="text-center" style="font-size:45px;  font-display:block; margin-top:20px">
-                    OUR AIMS
-                </p>
-                <p class="text-center" style="font-size:20px;  font-display:block; margin-top:20px">
-                    We aim to provide support to the NHS and our patients by providing  Private Clinics and medical services <br />
-                    at your doorstep.to achieve this systematically, we are targeting the most rural and  difficult to reach parts <br />
-                    of Wales.We will gradually phase these clinics and services out to the rest of the country.
-                </p>
-            </div>
-
-        </div>
-        <div class="row" style=" margin-top:50px;">
-            <div class="col-sm-3" style="text-align:center;">
-
-                <img src="~/Content/Images/icon1.png" class="rounded" alt="image" />
-                <B style="font-size:16px;">GP Appointments</B>
-            </div>
-            <div class="col-sm-3" style="text-align:center;">
-                <img src="~/Content/Images/icon2.png" class="rounded" alt="image" />
-                <B style="font-size:16px;">Contact a Consultant</B>
-            </div>
-            <div class="col-sm-3" style="text-align:center;">
-                <img src="~/Content/Images/icon3.png" class="rounded" alt="image" />
-                <B style="font-size:16px;">Enquiries@vchealthcare.co.uk</B>
-            </div>
-            <div class="col-sm-3" style="text-align:center;">
-                <img src="~/Content/Images/icon5.png" class="rounded" alt="image" />
-                <B style="font-size:16px;">Reception: 0800 233 5957</B>
-            </div>
-
-        </div>
-
-
-    </div>
+</div>
 
 
 
-    @section Scripts {
-        <script type="text/javascript">
-            const instance = new Typewriter('#heading', {
-                strings: ['<span class="wrapper"><span class="span-1">Vitalcare</span>, <span class="span-2">Health</span> <span class="span-3">–</span> <span class="span-4">Just For you</span>.</span>'],
-                autoStart: true,
-                loop: true,
-            });
-        </script>
-    }
-    @* <p class="font-weight-bold">Aims.</p>
-        <p class="font-weight-normal">.</p>*@
-    <script src="~/Scripts/popper.js"></script>
-    <script src="~/Scripts/popper.min.js"></script>
-    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
-    <script src="~/Scripts/moment.min.js"></script>
-    <script src="~/Scripts/bootstrap-datetimepicker.js"></script>
-    <script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
-</body>
-</html>
+@section Scripts {
+    <script type="text/javascript">
+        const instance = new Typewriter('#heading', {
+            strings: ['<span class="wrapper"><span class="span-1">Vitalcare</span>, <span class="span-2">Health</span> <span class="span-3">–</span> <span class="span-4">Just For you</span>.</span>'],
+            autoStart: true,
+            loop: true,
+        });
+    </script>
+}
+@* <p class="font-weight-bold">Aims.</p>
+    <p class="font-weight-normal">.</p>*@
+<script src="~/Scripts/popper.js"></script>
+<script src="~/Scripts/popper.min.js"></script>
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/moment.min.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.js"></script>
+<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>
+@*</body>
+    </html>*@

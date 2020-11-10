@@ -306,3 +306,8 @@ Data tables styles
 .hide {
     display: none;
 }
+
+.navbar-inverse {
+    background-color: #eee;
+    border-color: #eee;
+}
