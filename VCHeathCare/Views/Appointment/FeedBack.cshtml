@@ -1,6 +1,5 @@
 ﻿
 @{
-    ViewBag.Title = "SuccessFeedBack";
 
     var status = ViewBag.Status;
     var alertClass = "alert-success";
@@ -9,10 +8,16 @@
     var message = "Your appointment is booked and we will contact you soon.";
     if (status != "sent")
     {
+        ViewBag.Title = "Failed";
         title = "Oops!";
         message = "An error occured while processing your request. Please try again later or contact at vitalcarehealthcare@gmail.com";
         alertClass = "alert-danger";
         icon = "glyphicon-remove";
+    }
+    else
+    {
+        ViewBag.Title = "Success";
+
     }
 }
 
