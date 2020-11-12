@@ -189,6 +189,7 @@
     <Compile Include="Controllers\DateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MentalController.cs" />
     <Compile Include="Controllers\TreatmentsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -415,6 +416,7 @@
     <Content Include="Views\Date\dateTime.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
     <Content Include="Views\Appointment\SuccessFeedBack.cshtml" />
+    <Content Include="Views\Mental\mental.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Booking\" />

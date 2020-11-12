@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Treatments";
 }
+<link href="~/Content/StyleSheet1.css" rel="stylesheet" />
 <html>
 <head>
 
@@ -39,7 +40,7 @@ height:400px;" alt="Chania">
         <div class="row">
             <div class="col-lg-12" style="text-align:center">
                 <h2>Please choose front the list of available treatments!</h2>
-                <a class="btn btn-success" href="@Url.Action("Create","Treatments")">Add New </a>
+               @* <a class="btn btn-success" href="@Url.Action("Create","Treatments")">Add New </a>*@
             </div>
 
         </div>
@@ -57,7 +58,7 @@ height:400px;" alt="Chania">
                 <div id="rcorners1" class="card-cus" style="margin-bottom:20px;">
                     <div class="overlay">
                         <h2> Mental Health</h2>
-                        <a class="button2 button" href="@Url.Action("Details","Treatments",new { id=1})">Lets See</a>
+                        <a class="button2 button" href="http://vchealthcare.co.uk/Menatl/mental">Lets See</a>
                     </div>
 
                 </div>
