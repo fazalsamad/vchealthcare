@@ -176,3 +176,8 @@ gpbtn {
     margin-top: 59px !important;
 }
 
+
+.navbar-inverse {
+    background-color: #eee;
+    border-color: #eee;
+}

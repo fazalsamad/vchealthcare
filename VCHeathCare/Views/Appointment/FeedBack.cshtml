@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "SuccessFeedBack";
+
+    var status = ViewBag.Status;
+    var alertClass = "alert-success";
+    var title = "Thank You";
+    var icon = "glyphicon-ok";
+    var message = "Your appointment is booked and we will contact you soon.";
+    if (status != "sent")
+    {
+        title = "Oops!";
+        message = "An error occured while processing your request. Please try again later or contact at vitalcarehealthcare@gmail.com";
+        alertClass = "alert-danger";
+        icon = "glyphicon-remove";
+    }
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="alert alert-dismissable @alertClass text-center">
+    <h3>@title</h3>
+    @message
+    <h4><i class="glyphicon @icon"></i>&nbsp;</h4>
+</div>
+

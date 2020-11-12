@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using VCHeathCare.App_Start;
@@ -47,52 +49,34 @@ namespace VCHeathCare.Controllers
                 };
             }
 
-            var markUp = $@"<table>
-        <tbody>
-            <tr>
-                <th>Name</th>  <td>{appointment.Name}</td>
-            </tr>
-            <tr>
-                <th>Email</th> <td>{appointment.Email}</td>
-            </tr>
-            <tr>
-                <th>Date &amp; Time</th> <td>{appointment.Date.Value.ToLongDateString()} {appointment.Date.Value.ToLongTimeString()}</td>
-            </tr>
-            <tr>
-                <th>Contact Number</th> <td>{appointment.Contact}</td>
-            </tr>
-            <tr>
-                <th>Appointment Type</th>  <td>{appointment.AppointmentType}</td>
-            </tr> 
-        </tbody>
-    </table>";
+            var user = User.Identity.User();
 
-            var userPreMarkUp = @"<h2> We have received the following details for appointments.</h2>";
-            var userPostMarkUp = "<h3>We will contact you soon!</h3>";
+            var relayService = new EmailRelayService(); 
 
-            
-    
-                var userMarkup = $"{userPreMarkUp}{markUp}{userPostMarkUp}";
-            var toUseremail = new EmailModel(appointment.Email, "Appointment Booking", userMarkup);
+            var result = relayService.SendOnSendGrid(appointment,user);
 
-            var credentials = new EmailCredential();
+            if (!result)
+            {
+                result = relayService.SendOnSendGridSmtp(appointment);
 
-            var adminPreMarkUp = $"<h2>An appointment is booked by </h2> ";
-            var adminMarkUp = $"{adminPreMarkUp}{markUp}";
+            }
 
-            var toAdminEmail = new EmailModel(credentials.AdminEmail, "Appointment Booking", adminMarkUp);
+            if (!result)
+            {
+                result = relayService.SendOnGmailSmtp(appointment);
 
-            var emailService = new VCEmailService();
+            }
+            var status = result ? "sent" : "failed"; 
 
-            emailService.SendEmail(toUseremail);
-            emailService.SendEmail(toAdminEmail);
+            return RedirectToAction("FeedBack", new { status });
 
-            return RedirectToAction("SuccessFeedBack");
         }
 
-        public ActionResult SuccessFeedBack()
+        public ActionResult FeedBack(string status)
         {
+            ViewBag.Status = status;
+
             return View();
-        }
+        } 
     }
 }

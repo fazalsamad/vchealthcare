@@ -46,9 +46,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SendGrid, Version=9.21.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.21.1\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.2.0\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -215,6 +222,8 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Treatment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailRelayService.cs" />
+    <Compile Include="Services\SendGridMailService.cs" />
     <Compile Include="Services\VCEmailService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="VCExtenstions.cs" />
@@ -415,8 +424,12 @@
     <Content Include="Views\Treatments\Index.cshtml" />
     <Content Include="Views\Date\dateTime.cshtml" />
     <Content Include="Views\Appointment\Create.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Appointment\SuccessFeedBack.cshtml" />
     <Content Include="Views\Mental\mental.cshtml" />
+=======
+    <Content Include="Views\Appointment\FeedBack.cshtml" />
+>>>>>>> 79755360b89ec0126345e838f1595ba1ec96568a
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Booking\" />
